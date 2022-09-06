@@ -63,17 +63,21 @@ onCancel(){
         <h3 className='text-center brand-color py-2'>Make Payment</h3>
     <div className='fields'>
     <div>
-        <label> YOUR NAME</label>
+        <label className='text-light'> YOUR NAME</label>
     <input  className=' input m-1 p-1 px-3' type='text' value={name} placeholder='Enter Name'onChange={(event)=>setName(event.target.value)}/>
     </div>
 
     <div>
-        <label>YOUR EMAIL</label>
+        <label className='text-light'>YOUR EMAIL</label>
     <input  className=' input m-1 p-1 px-3' type='email' value={email} placeholder='Enter Your Email'onChange={(event)=>setEmail(event.target.value)}/>
     </div>
     <div>
-        <label> AMOUNT</label>
-    <div><input readOnly className=' input m-1 p-1 ' type='number' value= {amount} onChange={(event)=>setAmount(event.target.value)}/>
+        <label className='text-light'> AMOUNT</label>
+    <div className='input-group1'>
+    <div className='input-group-prepend'>
+        <span className='input-group-text' id='basic-addon1'>₦</span>
+      </div>
+        <input readOnly className=' input input1 'aria-describedby='basic-addon1' type='number' value= {amount} onChange={(event)=>setAmount(event.target.value)}/>
     </div>
     </div>
     <button  className=" input input-button text-center m-1 my-2 btn" type='submit'>

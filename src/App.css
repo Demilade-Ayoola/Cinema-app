@@ -10,6 +10,12 @@ height: 25px;
 margin-right: 0px;
 border: none;
 }
+.input-group1 {
+  display: flex;
+  align-items: stretch;
+  width: 93%;
+  margin-left: 22px;
+}
 .icon-mobile{
   height: 15px;
   width: 15px;
@@ -59,6 +65,32 @@ background: #0a0a0d;
 }
 .modal-dialog{
   width: 90%;
+}
+.input-group-text {
+border-radius: 0.25rem 0rem 0rem 0.25rem
+!important;
+}
+.input1{
+  border-radius: 0px 5px 5px 0px;
+}
+@media screen and (min-width: 800px) and (max-width: 1200){
+  .input-group1 {
+    width: 90%
+    !important;
+    margin-left: 17px
+    !important;
+  }
+  
+}
+@media screen and (max-width: 700px){
+  .input-group1 {
+    
+    width:90%
+    !important;
+    margin-left: 13px
+    !important;
+  }
+  
 }
 @media screen and (max-width: 500px) {
 .form-control2{
