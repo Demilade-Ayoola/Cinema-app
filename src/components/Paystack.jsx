@@ -2,6 +2,8 @@ import {React,useEffect, useState} from 'react'
 import PayStackPop from "@paystack/inline-js"
 import {Alert} from 'react-bootstrap'
 import Ticket from './Ticket'
+import {NumericFormat} from 'react-number-format'
+import {Link} from 'react-router-dom'
 
 function Paystack({ticket}) {
 const [flag, setFlag] = useState(false)
@@ -31,9 +33,6 @@ if(!email || !name ){
     email,
     onSuccess(transaction){
         setMessage(`Payment Complete! Check your E-mail for details. Reference ${transaction.reference}`)
-    if(message){
-        setHome(!home)
-}
         
 },
 onCancel(){
@@ -46,9 +45,9 @@ onCancel(){
     <>
     {home? (    
         <div bg = 'dark'>
-    {message ?  <Alert color="primary" variant = 'info'>
+    {message ? <Link to='/'><Alert color="primary" variant = 'info'>
         {message}
-    </Alert>
+    </Alert></Link> 
     : null}
 {cancel ?  <Alert color="primary" variant = 'info'>
         {cancel}
@@ -74,11 +73,8 @@ onCancel(){
     </div>
     <div>
         <label className='text-light'> AMOUNT</label>
-    <div className='input-group1'>
-    <div className='input-group-prepend'>
-        <span className='input-group-text' id='basic-addon1'>₦</span>
-      </div>
-        <input readOnly className=' input input1 'aria-describedby='basic-addon1' type='number' value= {amount} onChange={(event)=>setAmount(event.target.value)}/>
+    <div>
+   <NumericFormat readOnly className=' input m-1 p-1 px-3' type='number' value= {amount}  prefix={'₦'} onChange={(event)=>setAmount(event.target.value)}/>
     </div>
     </div>
     <button  className=" input input-button text-center m-1 my-2 btn" type='submit'>
