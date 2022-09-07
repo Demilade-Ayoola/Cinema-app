@@ -12,12 +12,11 @@ const [email, setEmail] = useState('')
 const [message, setMessage]= useState('')
 const [cancel, setCancel]=useState('')
 const [amount, setAmount]= useState('')
-const [home, setHome]= useState(true)
-const first = 3000 * ticket;
+
 useEffect(() => {
 
-    const second = 'NGN ' + first;
-setAmount(second)
+   
+setAmount(3000* ticket)
 }, [])
 
 function handlePay(e){
@@ -29,7 +28,7 @@ if(!email || !name ){
     const paystack= new PayStackPop()
     paystack.newTransaction({
         key:'pk_test_8a7597f7dd06572719f20a315cf00871def662ff',
-    amount: first * 100,
+    amount: amount * 100,
     name,
     email,
     onSuccess(transaction){
@@ -44,12 +43,14 @@ onCancel(){
 }
     return (
     <>
-    {home? (    
+        
         <div bg = 'dark'>
-    {message ? <Link className='link' to='/'><Alert color="primary" variant = 'info'>
+    {message ? <Link className='link' to='/'><div className="link-div">
+        <Alert color="primary" variant = 'info'>
         {message}
     </Alert>
-    <div className="link-div"></div></Link> 
+    </div>
+    </Link> 
     : null}
 {cancel ?  <Alert color="primary" variant = 'info'>
         {cancel}
@@ -65,6 +66,9 @@ onCancel(){
         <h3 className='text-center brand-color py-2'>Make Payment</h3>
     <div className='fields'>
     <div>
+        <h3 className="m-1 p-1 px-3">Amount: ₦{amount} </h3>
+    </div>
+    <div>
         <label className='text-light'> YOUR NAME</label>
     <input  className=' input m-1 p-1 px-3' type='text' value={name} placeholder='Enter Name'onChange={(event)=>setName(event.target.value)}/>
     </div>
@@ -73,12 +77,12 @@ onCancel(){
         <label className='text-light'>YOUR EMAIL</label>
     <input  className=' input m-1 p-1 px-3' type='email' value={email} placeholder='Enter Your Email'onChange={(event)=>setEmail(event.target.value)}/>
     </div>
-    <div>
+    {/* <div>
         <label className='text-light'> AMOUNT</label>
     <div>
    <input readOnly className=' input m-1 p-1 px-3' type='number' value= {amount}   prefix={'₦'} onChange={(event)=>setAmount(event.target.value)}/>
     </div>
-    </div>
+    </div> */}
     <button  className=" input input-button text-center m-1 my-2 btn" type='submit'>
         Pay
     </button>
@@ -93,9 +97,6 @@ onCancel(){
 
     </div>
   
-    ):(
-        <Ticket/>
-    )}
     </>
   )
 }
