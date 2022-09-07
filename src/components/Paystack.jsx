@@ -13,10 +13,11 @@ const [message, setMessage]= useState('')
 const [cancel, setCancel]=useState('')
 const [amount, setAmount]= useState('')
 const [home, setHome]= useState(true)
-
+const first = 3000 * ticket;
 useEffect(() => {
-  
-setAmount(3000* ticket)
+
+    const second = 'NGN ' + first;
+setAmount(second)
 }, [])
 
 function handlePay(e){
@@ -28,7 +29,7 @@ if(!email || !name ){
     const paystack= new PayStackPop()
     paystack.newTransaction({
         key:'pk_test_8a7597f7dd06572719f20a315cf00871def662ff',
-    amount: amount * 100,
+    amount: first * 100,
     name,
     email,
     onSuccess(transaction){
@@ -45,9 +46,10 @@ onCancel(){
     <>
     {home? (    
         <div bg = 'dark'>
-    {message ? <Link to='/'><Alert color="primary" variant = 'info'>
+    {message ? <Link className='link' to='/'><Alert color="primary" variant = 'info'>
         {message}
-    </Alert></Link> 
+    </Alert>
+    <div className="link-div"></div></Link> 
     : null}
 {cancel ?  <Alert color="primary" variant = 'info'>
         {cancel}
