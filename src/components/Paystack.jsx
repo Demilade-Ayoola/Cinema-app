@@ -74,7 +74,7 @@ onCancel(){
     <div>
         <label className='text-light'> AMOUNT</label>
     <div>
-   <input readOnly className=' input m-1 p-1 px-3' type='number' value= {amount}  prefix={'₦'} onChange={(event)=>setAmount(event.target.value)}/>
+   <input readOnly className=' input m-1 p-1 px-3' type='number' value= {amount}   prefix={'₦'} onChange={(event)=>setAmount(event.target.value)}/>
     </div>
     </div>
     <button  className=" input input-button text-center m-1 my-2 btn" type='submit'>
