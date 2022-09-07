@@ -71,6 +71,10 @@ border-radius: 0.25rem 0rem 0rem 0.25rem
 !important;
 }
 .input1{
+  outline: none;
+  border: none;
+  border: 0.1px solid lightgray;
+  width: 90%;
   border-radius: 0px 5px 5px 0px;
 }
 @media screen and (min-width: 800px) and (max-width: 1200){

@@ -31,10 +31,11 @@ if(!email || !name ){
     email,
     onSuccess(transaction){
         setMessage(`Payment Complete! Check your E-mail for details. Reference ${transaction.reference}`)
-    setEmail('')
-    setName('')
-setHome(!home)
-    },
+    if(message){
+        setHome(!home)
+}
+        
+},
 onCancel(){
     setCancel('You have Canceled the transaction')
 }
