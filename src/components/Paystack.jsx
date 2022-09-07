@@ -66,7 +66,7 @@ onCancel(){
         <h3 className='text-center brand-color py-2'>Make Payment</h3>
     <div className='fields'>
     <div>
-        <h3 className="m-1 p-1 px-3">Amount: ₦{amount} </h3>
+        <h3 className="m-1 brand-color p-1 px-3">Amount: ₦{amount} </h3>
     </div>
     <div>
         <label className='text-light'> YOUR NAME</label>
