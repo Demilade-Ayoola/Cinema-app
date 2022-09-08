@@ -37,10 +37,17 @@ border: none;
   outline: none;
   border-radius: 5px 0px 0px 5px;
 }
+
+#root{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
 body{
   padding: 0px;
   overflow-x:hidden;
-background-color: #0a0a0d;
+  background-color: #0a0a0d;
 }
 .btn-close{
   outline: none;

@@ -4,7 +4,8 @@ import { useMediaQuery } from 'react-responsive'
  import Movielist from "./Movielist"
  import Youtube from 'react-youtube'
  import Main from './Main';
-import Ticket from './Ticket';
+
+ import Ticket from './Ticket';
 import {
 Routes,
   Route, Link} from 'react-router-dom'
@@ -47,7 +48,7 @@ const handleChange = event =>{
       })
 
 
-const filteredMovies = data.results.filter((result, I)=>I < 8)
+const filteredMovies = data.results.filter((result, I)=>I < 9)
 
       setMovies(filteredMovies)
       setMovie(data.results[0])
@@ -173,6 +174,7 @@ console.log(filteredMovies)
     </Routes>
     
     </div>
+   
     </>
   );
 }
