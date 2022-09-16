@@ -10,7 +10,7 @@ function Footer() {
          <div> <h1>Dream<strong><span className='brand-color'>Cinemas</span></strong></h1>
           </div>
                   </div>
-                  <div className=" col-xs-6 col-md-3 addpad"><h6>COMPANY</h6>
+                  <div className=" col-sm-6 col-md-3 addpad"><h6>COMPANY</h6>
           <ul className="footer-links">
             <li><a href="">Cinemas</a></li>
             <li><a href="">Ticket Prices</a></li>
@@ -19,7 +19,7 @@ function Footer() {
           </div>
 
 
-        <div className="col-xs-6 col-md-3">
+        <div className="col-sm-6 col-md-3">
           <h6>TERMS</h6>
           <ul className="footer-links">
             <li><a href="">General</a></li>
@@ -29,7 +29,7 @@ function Footer() {
            </ul>
         </div>
 
-        <div className="col-xs-6 col-md-3">
+        <div className="col-sm-6 col-md-3">
           <h6>Quick Links</h6>
           <ul className="footer-links">
             <li><a href="">Contact Us</a></li>
@@ -43,7 +43,7 @@ function Footer() {
     </div>
     <div className="container">
       <div className="row">
-        <div className="col-md-8 col-sm-6 col-xs-12">
+        <div className="col-md-8 col-sm-6 col-sm-12">
           <p className="copyright-text">Copyright &copy; 2022 All Rights Reserved by Demilade Ayoola.
           </p>
         </div>
