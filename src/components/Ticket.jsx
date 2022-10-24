@@ -1,9 +1,11 @@
 import { useState, useEffect} from "react"
 import React  from 'react'
+import { useNavigate } from "react-router"
+import { useDispatch } from 'react-redux';
+import {setNumbers} from '../redux/number';
 import { useParams } from "react-router-dom";
 import axios from 'axios'
 import {Alert} from 'react-bootstrap'
-import Paystack from "./Paystack";
 
 function Ticket() {
     const BACKDROP_PATH = "https://image.tmdb.org/t/p/w1280"
@@ -16,8 +18,9 @@ const [location, setLocation] = useState('')
 const [date, setDate] = useState('')
 const [time, setTime] = useState('')
 const [show, setShow] = useState(false)
-const[pay,setPay] = useState(true)
 
+let navigate= useNavigate()
+  let dispatch=useDispatch()
 const current = new Date();
   
 const tomorrow = `${current.getDate()+1} ${current.toLocaleString('default', { month: 'long' })}`;
@@ -42,13 +45,15 @@ useEffect(() => {
      if(!date || !ticket || !time){
          setShow(true);
      }else{
-         setPay(!pay);
          setShow(false)
-     }
+         dispatch(setNumbers(ticket))
+         navigate('/Checkout')
+        }
      }
 
     return (
-    <>{pay ? (
+    <>
+     
         <div className="ticket">
           <div className="progress-container">
             <div className="progress-text">
@@ -117,10 +122,7 @@ useEffect(() => {
   
 </div>
 </div>
-    ) : (
-        <Paystack ticket={ticket}/>
-    )}
- 
+     
   </>
   )
 }
