@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive'
  import Movielist from "./Movielist"
  import Youtube from 'react-youtube'
  import Main from './Main';
-
+import Checkout from './Checkout'
  import Ticket from './Ticket';
 import {
 Routes,
@@ -171,6 +171,7 @@ console.log(filteredMovies)
       <Routes>
       <Route exact path='/' element={<ShowBody/>}></Route>
       <Route exact path='/Ticket/:id' element={<Ticket/>}></Route>
+      <Route exact path='/Checkout' element={<Checkout/>}></Route>
     </Routes>
     
     </div>
